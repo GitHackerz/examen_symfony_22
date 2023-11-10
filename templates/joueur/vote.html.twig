@@ -9,6 +9,7 @@
             <th>Date Vote</th>
             <th>Note Vote</th>
         </tr>
+
         {% for vote in votes %}
         <tr>
             <td>{{ vote.date| date('d-m-Y') }}</td>
@@ -16,7 +17,7 @@
         </tr>
         {% else %}
         <tr>
-            <td colspan="4">no records found</td>
+            <td colspan="4">no Votes found</td>
         </thead>
         {% endfor %}
     </table>
