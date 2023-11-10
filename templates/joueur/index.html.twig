@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello JoueurController!{% endblock %}
+
+{% block body %}
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Equipe</th>
+            <th>Moyenne Vote</th>
+            <th>Actions</th>
+        </tr>
+        {% for joueur in joueurs %}
+        <tr>
+            <td>{{ joueur.id }}</td>
+            <td>{{ joueur.nom }}</td>
+            <td>{{ joueur.equipe }}</td>
+            <td>{{ joueur.moyenneVote }}</td>
+            <td>
+                <a href="{{ path('app_joueur_vote', {'id': joueur.id}) }}">vote Details</a>
+            </td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="4">no records found</td>
+        </thead>
+        {% endfor %}
+    </table>
+{{ form(f) }}
+{% endblock %}

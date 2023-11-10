@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello JoueurController!{% endblock %}
+
+{% block body %}
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Date Vote</th>
+            <th>Note Vote</th>
+        </tr>
+        {% for vote in votes %}
+        <tr>
+            <td>{{ vote.date| date('d-m-Y') }}</td>
+            <td>{{ vote.noteVote }}</td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="4">no records found</td>
+        </thead>
+        {% endfor %}
+    </table>
+{% endblock %}
